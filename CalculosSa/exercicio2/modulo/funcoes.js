@@ -1,11 +1,10 @@
 //Função feita apenas para validar as notas sem exame
-function gestaoDeNotas(nota1,nota2,nota3,nota4){
+function calcularMedia(nota1,nota2,nota3,nota4){
     let primeiraNota = nota1
     let segundaNota = nota2
     let terceiraNota = nota3
     let quartaNota = nota4
     let media
-    let status = ''
 
     //Fazendo a troca de , por .
     primeiraNotaStr = String(primeiraNota).replace(',','.')
@@ -21,26 +20,9 @@ function gestaoDeNotas(nota1,nota2,nota3,nota4){
 
     if(validarDados(primeiraNota,segundaNota,terceiraNota,quartaNota)){
         media = (primeiraNota + segundaNota + terceiraNota + quartaNota) / 4
-
-        //Parte para calcular a media do aluno
-        if(media >= 70){
-            status = 'APROVADO'
-        }else if(media >= 50){
-            status = 'REPROVADO'
-        //Caso especifico caso entre em exame
-        }else if(media < 50 || media <= 69){
-            status = 'EXAME'
-
-            let quintaNota
-
-            gestaoDoExame(quintaNota)
-        }
-
     }
 
-
-
-    return status
+    return media
 }
 //Função feita apenas para validar os dados das notas sem o exame
 function validarDados(nota1,nota2,nota3,nota4){
@@ -81,10 +63,27 @@ function validarDados(nota1,nota2,nota3,nota4){
     return status
 }
 
+function statusDoAluno(valorMedia){
+    let media = valorMedia
+    let status = ''
+
+    //Parte para calcular a media do aluno
+    if(media >= 70){
+        status = 'APROVADO'
+    }else if(media >= 50){
+        status = 'REPROVADO'
+    //Caso especifico caso entre em exame
+    }else if(media < 50 && media <= 69){
+        status = 'EXAME'
+    }
+
+    return status
+}
+
 //Função feita para validar a nota do exame
-function gestaoDoExame(nota5,antigaMedia){
+function gestaoDoExame(nota5,valorMedia){
     quintaNota = nota5
-    media = antigaMedia
+    media = valorMedia
     let status = ''
     let novaMedia
 
@@ -138,4 +137,4 @@ function validarDadosExame(nota5){
 
 }
 
-console.log(gestaoDoExame(50,100))
+

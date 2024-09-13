@@ -10,30 +10,11 @@ function Imc(valor1,valor2){
     peso = Number(pesoStr)
     altura = Number(alturaStr)
 
-    //Fazendo a conta do imc
+    
     if(validarDados(peso,altura)){
 
+        //Fazendo a conta do imc
         imc = (Number(peso) / (Number(altura) * Number(altura))).toFixed(2)
-    }
-
-    if(imc <= 18.5){
-        console.log(`IMC --> ${imc} | Classificação --> ABAIXO DO PESO`)
-        status = true
-    }else if(imc >= 18.5 || imc <= 24.9){
-        console.log(`IMC --> ${imc} | Classificação --> PESO NORMAL`)
-        status = true
-    }else if(imc >= 25 || imc <= 29.9 ){
-        console.log(`IMC --> ${imc} | Classificação --> ACIMA DO PESO( SOBREPRESO )`)
-        status = true
-    }else if(imc >= 30 || imc <= 34.9){
-        console.log(`IMC --> ${imc} | Classificação --> OBESIDADE I`)
-        status = true
-    }else if(imc >= 35 || imc <= 39){
-        console.log(`IMC --> ${imc} | Classificação --> OBESIDADE II`)
-        status = true
-    }else if(imc >= 40){
-        console.log(`IMC --> ${imc} | Classificação --> OBESIDADE III`)
-        status = true
     }
 
     return status
@@ -60,5 +41,26 @@ function validarDados(valor1,valor2){
 
 
     return status
+}
+
+function classificacaoIMC(valorImc){
+    let imc = valorImc
+    let classificacao = ''
+
+    if(imc <= 18.5){
+        classificacao = `IMC --> ${imc} | Classificação --> ABAIXO DO PESO`
+    }else if(imc >= 18.5 && imc <= 24.9){
+        classificacao = `IMC --> ${imc} | Classificação --> PESO NORMAL`
+    }else if(imc >= 25 && imc <= 29.9 ){
+        classificacao = `IMC --> ${imc} | Classificação --> ACIMA DO PESO ( SOBREPRESO )`
+    }else if(imc >= 30 && imc <= 34.9){
+        classificacao = `IMC --> ${imc} | Classificação --> OBESIDADE I`
+    }else if(imc >= 35 && imc <= 39){
+        classificacao = `IMC --> ${imc} | Classificação --> OBESIDADE II`
+    }else if(imc >= 40){
+        classificacao = `IMC --> ${imc} | Classificação --> OBESIDADE III`
+    }
+
+    return classificacao
 }
 
