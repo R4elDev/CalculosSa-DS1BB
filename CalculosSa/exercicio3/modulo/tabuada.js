@@ -56,5 +56,3 @@ function validarDados(primeiraTabuada,ultimaTabuada,contadorInicial,contadorFina
 
     return status
 }
-
-fazerTabuada('a',20,1,2)
