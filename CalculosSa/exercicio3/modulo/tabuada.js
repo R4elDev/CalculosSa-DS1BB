@@ -1,4 +1,6 @@
+// Função para realizar a criação das tabuadas
 function fazerTabuada(primeiraTabuada,ultimaTabuada,contadorInicial,contadorFinal){
+    // Parte reservada para a criação de variáveis
     let tabuadaInicial = Number(primeiraTabuada)
     let tabuadaFinal = Number(ultimaTabuada)
     let inicio = Number(contadorInicial)
@@ -6,11 +8,15 @@ function fazerTabuada(primeiraTabuada,ultimaTabuada,contadorInicial,contadorFina
     let status = false
     let resultado 
 
+    // Condicional que chama a função validar dados
     if(validarDados(tabuadaInicial,tabuadaFinal,inicio,final)){
+
+        // Repetição que contém o limite da tabuada
         while(tabuadaInicial <= tabuadaFinal){
 
             console.log(`TABUADA DO --> ${tabuadaInicial}`)
-    
+            
+            // Repetição que cria as tabuadas
             while(inicio <= final){
                 status = true
                 resultado = Number(tabuadaInicial) * Number(inicio)
@@ -27,7 +33,7 @@ function fazerTabuada(primeiraTabuada,ultimaTabuada,contadorInicial,contadorFina
     return status
 }
 
-
+// Função feita para validar a entrada de dados
 function validarDados(primeiraTabuada,ultimaTabuada,contadorInicial,contadorFinal){
     //Criação das variaveis ultilizadas na funcção
     let tabuadaInicial = primeiraTabuada
@@ -48,6 +54,7 @@ function validarDados(primeiraTabuada,ultimaTabuada,contadorInicial,contadorFina
     }else if(tabuadaInicial >= 2 && tabuadaInicial >= 100 || tabuadaFinal >= 2 && tabuadaFinal >= 100 ){
         console.log('* ERRO * AS TABUADAS DEVEM ESTAR ENTRE 2 e 100 !')
         status = false
+    //Verificando se o valor da tabuana final é menor que o da tabuada inicial
     }else if(tabuadaFinal < tabuadaInicial){
         console.log('* ERRO * AS PRIMEIRA TABUADA TEM QUE SER MENOR QUE A SEGUNDA !')
     }else if(inicio < 1 || inicio >= 50 && final < 1 || final >= 50 ){
