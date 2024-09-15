@@ -1,39 +1,52 @@
-function Imc(valor1,valor2){
-    let peso = valor1
-    let altura = valor2
+// Função que realiza o calculo do imc e é ligada com a de validação de dados
+function ValorDoImc(peso,altura){
+
+    // Parte reservada para a criação de variáveis que usaremos na função
+    let valorPeso = peso
+    let valorAltura = altura
     let imc
     let status = false
 
-    pesoStr = String(peso).replace(',','.')
-    alturaStr = String(altura).replace(',','.')
+    // Troca da virgula por ponto para não dar interferência na validação de dados
+    let pesoStr = String(valorPeso).replace(',','.')
+    let alturaStr = String(valorAltura).replace(',','.')
 
-    peso = Number(pesoStr)
-    altura = Number(alturaStr)
+    // Troca de tipo String para Number
+    valorPeso = Number(pesoStr)
+    valorAltura = Number(alturaStr)
 
-    
-    if(validarDados(peso,altura)){
+    // Parte que faz o uso da função de tratamento para dar continuidade ao código
+    if(validarDados(valorPeso,valorAltura)){
 
+        // Troca do status para validar o funcionamento da função
+        status = true
         //Fazendo a conta do imc
-        imc = (Number(peso) / (Number(altura) * Number(altura))).toFixed(2)
+        imc = (valorPeso / (valorAltura * valorAltura)).toFixed(2)
     }
 
-    return status
+    return imc
 }
 
+// Função que realiza o tratamento de dados que o usuário nos passa
 function validarDados(valor1,valor2){
+    // Parte reservada para a criação de variáveis que usaremos na função
     let peso = valor1
     let altura = valor2
     let status = true
 
-    pesoStr = String(peso).replace(',','.')
-    alturaStr = String(altura).replace(',','.')
+    // Troca da virgula por ponto 
+    let pesoStr = String(peso).replace(',','.')
+    let alturaStr = String(altura).replace(',','.')
 
+    // Troca do tipo para continuar as condicionais
     peso = Number(pesoStr)
     altura = Number(alturaStr)
 
+    // Condicional para tratar valores vazios
     if(peso == '' || altura == ''){
         console.log('* ERRO * --> TODOS OS CAMPOS DEVEM SER PREENCHIDOS')
         status = false
+    // Condicional para tratar a entrada de Strings
     }else if( isNaN(peso) || isNaN(altura) ){
         console.log('* ERRO * --> NÃO É PERMITIDO STRINGS')
         status = false
@@ -43,10 +56,13 @@ function validarDados(valor1,valor2){
     return status
 }
 
-function classificacaoIMC(valorImc){
+// Função que precisa do valor da 'ValordoIMC' para conseguir mostrar a classificação do imc
+function categoria(valorImc){
+    // Parte para as variaveis que vamos usar no resto da função
     let imc = valorImc
     let classificacao = ''
 
+    // Condicionais de classificação
     if(imc <= 18.5){
         classificacao = `IMC --> ${imc} | Classificação --> ABAIXO DO PESO`
     }else if(imc >= 18.5 && imc <= 24.9){
