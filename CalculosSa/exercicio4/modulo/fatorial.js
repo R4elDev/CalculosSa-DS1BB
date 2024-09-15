@@ -1,23 +1,29 @@
+// Função que realiza o calculo do fatorial
 function calculoDeFatorial(valorRecebido){
+    // Parte reservada para a criação das variáveis 
     let fatorial = valorRecebido
     let contador = fatorial
     let resultado = String(fatorial)
     let numeroInicial = 1
 
+    //Condicional que chama a função de validação de dados
     if(validarDados(fatorial)){
 
+        // Repetição que faz a conta do fatorial
         while(contador >= 2){
             numeroInicial *= contador
             contador -= 1
-            resultado = resultado + ' x ' + contador 
+            resultado = resultado + ' x ' + contador // 'Firula' para que o fatorial fique concatenado 
     
         }
     }
 
-    return resultado + ' = ' + numeroInicial
+    return resultado + ' = ' + numeroInicial // Return junto com uma 'FIRULA' para que o fatorial seja concatenado com o '='
 }
 
 
+
+//Função feita para validar as entradas recebidas
 function validarDados(valorRecebido){
     //Criação das variaveis ultilizadas na funcção
     let fatorial = valorRecebido
@@ -35,8 +41,10 @@ function validarDados(valorRecebido){
     }else if(fatorial === 0){
         console.log('* ERRO * NÃO EXISTE O FATORIAL DE 0')
         status = false
+    // Verificando se o fatorial é igual a 1
     }else if(fatorial == 1){
         console.log('NÃO É POSSÍVEL CALCULAR O FATORIAL DE 1 - DIGITE UM VALOR MAIOR QUE 1! ')
+        status = false
     }
     return status
 }
