@@ -49,3 +49,6 @@ function validarDados(valorRecebido){
     return status
 }
 
+module.exports = {
+    calculoDeFatorial
+}

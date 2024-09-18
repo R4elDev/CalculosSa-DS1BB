@@ -137,4 +137,8 @@ function validarDadosExame(nota5){
 
 }
 
-
+module.exports = {
+    calcularMedia,
+    statusDoAluno,
+    gestaoDoExame,
+}

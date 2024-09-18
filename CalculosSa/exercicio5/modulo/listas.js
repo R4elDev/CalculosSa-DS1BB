@@ -73,3 +73,6 @@ function validarDados(numeroInicial, numeroFinal) {
     return status
 }
 
+module.exports = {
+    geradorDeListas
+}

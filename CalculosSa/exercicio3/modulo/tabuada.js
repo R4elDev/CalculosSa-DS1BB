@@ -63,3 +63,7 @@ function validarDados(primeiraTabuada,ultimaTabuada,contadorInicial,contadorFina
 
     return status
 }
+
+module.exports = {
+    fazerTabuada
+}

@@ -1,5 +1,5 @@
 // Função que realiza o calculo do imc e é ligada com a de validação de dados
-function ValorDoImc(peso,altura){
+function valorDoImc(peso,altura){
 
     // Parte reservada para a criação de variáveis que usaremos na função
     let valorPeso = peso
@@ -80,3 +80,7 @@ function categoria(valorImc){
     return classificacao
 }
 
+module.exports = {
+    valorDoImc,
+    categoria
+}
