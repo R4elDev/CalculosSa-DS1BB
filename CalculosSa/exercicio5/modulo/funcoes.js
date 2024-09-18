@@ -5,9 +5,6 @@ function geradorDeListas(numeroInicial, numeroFinal) {
     let final = numeroFinal
     let contadorPar = 0
     let contadorImpar = 0
-    let somaPares = 0 // Gambiarra que tenho que resolver na sexta
-    let somaImpar = 0 // Gambiarra que tenho que resolver na sexta
-    let somaParesEImpar = 0 // Gambiarra que tenho que resolver na sexta
     let status = false
 
     // Condiconal que chama a função de validar dados
@@ -20,7 +17,6 @@ function geradorDeListas(numeroInicial, numeroFinal) {
             if (contador % 2 === 0) {
 
                 console.log(contador)
-                somaPares += contador // Gambiarra
                 contadorPar += 1
 
             }
@@ -37,13 +33,11 @@ function geradorDeListas(numeroInicial, numeroFinal) {
             if (contador % 2 !== 0) {
 
                 console.log(contador)
-                somaImpar += contador // Gambiarra
                 contadorImpar += 1
 
             }
         }
 
-        somaParesEImpar = somaPares + somaImpar // Gambiarra
         console.log(`Quantidade de números pares encontrados --> ${contadorImpar}`)
     }
 
