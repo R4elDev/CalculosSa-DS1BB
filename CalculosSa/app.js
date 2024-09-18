@@ -6,8 +6,11 @@
  *********************************************************************************/
 
 //Parte para chamar as funções
-var imc = require('./exercicio1/classificacaoDoImc')
-var media = require(./)
+var imc = require('./exercicio1/classificacaoDoImc.js')
+var media = require('./exercicio2/modulo/media.js')
+var tabuada = require('./exercicio3/modulo/tabuada.js')
+var fatorial = require('./exercicio4/modulo/fatorial.js')
+var lista = require('./exercicio5/modulo/listas.js')
 
  var readline = require('readline')
 
