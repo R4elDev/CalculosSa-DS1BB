@@ -21,8 +21,6 @@ function calculoDeFatorial(valorRecebido){
     return resultado + ' = ' + numeroInicial // Return junto com uma 'FIRULA' para que o fatorial seja concatenado com o '='
 }
 
-
-
 //Função feita para validar as entradas recebidas
 function validarDados(valorRecebido){
     //Criação das variaveis ultilizadas na funcção

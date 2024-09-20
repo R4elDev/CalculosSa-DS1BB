@@ -24,6 +24,7 @@ function valorDoImc(peso,altura){
         imc = (valorPeso / (valorAltura * valorAltura)).toFixed(2)
     }
 
+
     return imc
 }
 
@@ -84,3 +85,4 @@ module.exports = {
     valorDoImc,
     categoria
 }
+

@@ -24,7 +24,7 @@ function fazerTabuada(primeiraTabuada,ultimaTabuada,contadorInicial,contadorFina
                 inicio += 1
             }
     
-            inicio = contadorInicial
+            inicio = Number(contadorInicial)
             console.log('-==-=-=-=-=-=-=-=-=-=-=-=-=')
             tabuadaInicial += 1
         }
@@ -63,6 +63,8 @@ function validarDados(primeiraTabuada,ultimaTabuada,contadorInicial,contadorFina
 
     return status
 }
+
+
 
 module.exports = {
     fazerTabuada

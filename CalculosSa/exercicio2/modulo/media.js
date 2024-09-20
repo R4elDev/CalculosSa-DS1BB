@@ -7,10 +7,10 @@ function calcularMedia(nota1,nota2,nota3,nota4){
     let media
 
     //Fazendo a troca de , por .
-    primeiraNotaStr = String(primeiraNota).replace(',','.')
-    SegundaNotaStr = String(segundaNota).replace(',','.')
-    TerceiraNotaStr = String(terceiraNota).replace(',','.')
-    QuartaNotaStr = String(quartaNota).replace(',','.')
+    let primeiraNotaStr = String(primeiraNota).replace(',','.')
+    let SegundaNotaStr = String(segundaNota).replace(',','.')
+    let TerceiraNotaStr = String(terceiraNota).replace(',','.')
+    let QuartaNotaStr = String(quartaNota).replace(',','.')
 
     //Alterando o tipo para evitar o erro nas proximas verificações
     primeiraNota = Number(primeiraNotaStr)
@@ -70,10 +70,10 @@ function statusDoAluno(valorMedia){
     //Parte para calcular a media do aluno
     if(media >= 70){
         status = 'APROVADO'
-    }else if(media >= 50){
+    }else if(media < 50){
         status = 'REPROVADO'
     //Caso especifico caso entre em exame
-    }else if(media < 50 && media <= 69){
+    }else if(media > 50 && media < 70){
         status = 'EXAME'
     }
 
@@ -97,9 +97,9 @@ function gestaoDoExame(nota5,valorMedia){
         novaMedia = (quintaNota + media) / 2
 
         if(novaMedia > 60){
-            status = 'APROVADO NO EXAME'
+            status = `APROVADO NO EXAME COM MÉDIA --> ${novaMedia}`
         }else{
-            status = 'REPROVADO NO EXAME'
+            status = `REPROVADO NO EXAME COM MÉDIA --> ${novaMedia}`
         }
     }
 

@@ -1,8 +1,10 @@
+const { stat } = require("fs")
+
 // Função que gera as listas  de números pares e impares
 function geradorDeListas(numeroInicial, numeroFinal) {
     // Parte reservada para a criação das variáveis que vamos utilizar
-    let inicio = numeroInicial
-    let final = numeroFinal
+    let inicio = Number(numeroInicial)
+    let final = Number(numeroFinal)
     let contadorPar = 0
     let contadorImpar = 0
     let status = false
@@ -38,7 +40,9 @@ function geradorDeListas(numeroInicial, numeroFinal) {
             }
         }
 
-        console.log(`Quantidade de números pares encontrados --> ${contadorImpar}`)
+        console.log(`Quantidade de números impares encontrados --> ${contadorImpar}`)
+
+
     }
 
     return status
@@ -48,8 +52,8 @@ function geradorDeListas(numeroInicial, numeroFinal) {
 // Função para a validação das entradas
 function validarDados(numeroInicial, numeroFinal) {
     // Parte reservada para criação de variáveis que vamos usar
-    let inicio = numeroInicial
-    let final = numeroFinal
+    let inicio = Number(numeroInicial)
+    let final = Number(numeroFinal)
     let status = true
 
     // Condicionais de validação
@@ -73,6 +77,64 @@ function validarDados(numeroInicial, numeroFinal) {
     return status
 }
 
+function geradorPares(numeroInicial, numeroFinal) {
+    let inicio = Number(numeroInicial)
+    let final = Number(numeroFinal)
+    let contadorPar = 0
+    let status = false
+
+    // Condiconal que chama a função de validar dados
+    if (validarDados(inicio, final)) {
+        status = true
+        console.log('Lista de números PARES')
+
+        // Repetição for por conta do limite pré fixo que faz a lista dos pares
+        for (let contador = inicio; contador <= final; contador += 1) {
+            if (contador % 2 === 0) {
+
+                console.log(contador)
+                contadorPar += 1
+
+            }
+        }
+
+        console.log(`Quantidade de números pares encontrados --> ${contadorPar}`)
+    }
+
+    return false
+
+
+}
+
+function geradorimpares(numeroInicial, numeroFinal) {
+    let inicio = Number(numeroInicial)
+    let final = Number(numeroFinal)
+    let contadorImpar = 0
+    let status = false
+
+    if (validarDados(inicio, final)) {
+        console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
+
+        console.log('Lista de números IMPARES')
+
+        // Repetição for por conta do limite pré fixo que faz a lista dos impares
+        for (let contador = inicio; contador <= final; contador += 1) {
+            if (contador % 2 !== 0) {
+                console.log(contador)
+                contadorImpar += 1
+                status = true
+
+            }
+        }
+
+        console.log(`Quantidade de números impares encontrados --> ${contadorImpar}`)
+    }
+}
+
+
+
 module.exports = {
-    geradorDeListas
+    geradorDeListas,
+    geradorPares,
+    geradorimpares
 }
