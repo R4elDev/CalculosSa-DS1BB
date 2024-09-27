@@ -1,8 +1,8 @@
 /*********************************************************************************
  * Objetivo --> Juntar todos os exercicios em um app só
- * Data --> 20/09/2024
+ * Data --> 27/09/2024
  * Autor --> Israel
- * Versão --> 1.0
+ * Versão --> 2.0
  *********************************************************************************/
 
 //Parte para chamar as funções
@@ -13,7 +13,7 @@ var tabuada = require('./exercicio3/modulo/tabuada.js')
 var fatorial = require('./exercicio4/modulo/fatorial.js')
 var lista = require('./exercicio5/modulo/listas.js')
 
-
+// Chamando a biblioteca para poder interagir no terminal
 var readline = require('readline')
 
 var entradaDeDados = readline.createInterface({
@@ -21,6 +21,7 @@ var entradaDeDados = readline.createInterface({
    output: process.stdout
 })
 
+// Parte responsável pela criação do menu 
 console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=')
 console.log('Bem vindo ao programa de soluções da CÁLCULOS SA')
 console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-')
@@ -31,9 +32,11 @@ console.log('-- Criador de Tabuada [ 3 ]')
 console.log('-- Fatorial [ 4 ]')
 console.log('-- Gerador de pares e impares [ 5 ]')
 
+// Primeira entrada de dados para entrar dentro das condicionais
 entradaDeDados.question('--> ', function (resposta) {
    let contador = resposta
 
+// Condicinais do menu
    if (contador == 1) {
       console.log('-=-=-=-=-=-=-=-=-=-==-=-')
       console.log('Classificação do IMC')
@@ -170,6 +173,7 @@ entradaDeDados.question('--> ', function (resposta) {
             })
          })
       })
+
    }else if(contador == 4){
       console.log('-=-=-=-=-=-=-=-=-=-==-=-=')
       console.log('Fatorial')
@@ -227,6 +231,3 @@ entradaDeDados.question('--> ', function (resposta) {
       })
    }
 })
-
-
-

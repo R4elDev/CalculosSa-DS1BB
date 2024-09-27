@@ -129,6 +129,8 @@ function geradorimpares(numeroInicial, numeroFinal) {
 
         console.log(`Quantidade de números impares encontrados --> ${contadorImpar}`)
     }
+
+    return status
 }
 
 
